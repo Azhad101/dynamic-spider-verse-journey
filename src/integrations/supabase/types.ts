@@ -14,7 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cleanup_reports: {
+        Row: {
+          created_at: string
+          id: string
+          location: string
+          note: string | null
+          report_type: string
+          severity: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          location: string
+          note?: string | null
+          report_type: string
+          severity?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          location?: string
+          note?: string | null
+          report_type?: string
+          severity?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cleanup_zones: {
+        Row: {
+          city: string
+          color: string
+          created_at: string
+          id: string
+          latitude: number
+          longitude: number
+          name: string
+          progress: number
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          city: string
+          color?: string
+          created_at?: string
+          id?: string
+          latitude: number
+          longitude: number
+          name: string
+          progress?: number
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          city?: string
+          color?: string
+          created_at?: string
+          id?: string
+          latitude?: number
+          longitude?: number
+          name?: string
+          progress?: number
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      hero_scores: {
+        Row: {
+          alias: string
+          avatar_key: string
+          created_at: string
+          id: string
+          missions: number
+          recovered_kg: number
+          sector: string
+          updated_at: string
+        }
+        Insert: {
+          alias: string
+          avatar_key?: string
+          created_at?: string
+          id?: string
+          missions?: number
+          recovered_kg?: number
+          sector: string
+          updated_at?: string
+        }
+        Update: {
+          alias?: string
+          avatar_key?: string
+          created_at?: string
+          id?: string
+          missions?: number
+          recovered_kg?: number
+          sector?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      mission_activity: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          impact_kg: number
+          mission_name: string
+          updated_at: string
+          user_id: string
+          zone_id: string | null
+        }
+        Insert: {
+          action?: string
+          created_at?: string
+          id?: string
+          impact_kg?: number
+          mission_name: string
+          updated_at?: string
+          user_id: string
+          zone_id?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          impact_kg?: number
+          mission_name?: string
+          updated_at?: string
+          user_id?: string
+          zone_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mission_activity_zone_id_fkey"
+            columns: ["zone_id"]
+            isOneToOne: false
+            referencedRelation: "cleanup_zones"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
