@@ -3,12 +3,9 @@
 ## Compact token summary
 - CSS entry: `src/styles.css`
 - Styling: Tailwind CSS v4 with semantic CSS variables.
-- Current light background: `oklch(1 0 0)`
-- Current light foreground: `oklch(0.129 0.042 264.695)`
-- Current primary: `oklch(0.208 0.042 265.755)`
-- Current radius: `0.625rem`
-- Dark theme variables are present under `.dark`.
-- Planned Eco-Spidey tokens should be added semantically in `src/styles.css` rather than as raw color utilities in page code.
+- Current starter palette is neutral and will be replaced by semantic Eco-Spidey tokens.
+- Current radius: `0.625rem`.
+- Planned visual language: near-black ink, deep navy, signal red, electric blue, warm neutral, thin borders, restrained motion.
 
 ## Raw source
 
